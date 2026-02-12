@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(dir:*)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(xcopy:*)",
+      "Bash(npm install:*)",
+      "Bash(curl:*)",
+      "Bash(npm run build:*)",
+      "Bash(copy:*)",
+      "Bash(copy \"C:\\\\Hairgraphy_landingpage\\\\capture\\\\1-2.png\" \"C:\\\\Hairgraphy_landingpage\\\\public\\\\images\\\\1-2.png\")",
+      "Bash(copy \"C:\\\\Hairgraphy_landingpage\\\\capture\\\\1-4.png\" \"C:\\\\Hairgraphy_landingpage\\\\public\\\\images\\\\1-4.png\")",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}
