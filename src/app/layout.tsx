@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { SITE_URL } from "@/lib/seo-content";
 import { pretendard } from "./fonts";
 import "./globals.css";
 
@@ -12,7 +11,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL("https://hairgraphy.site"),
   title: {
     default: "헤어그래피 - 헤어 디자이너를 위한 올인원 앱",
     template: "%s | 헤어그래피",
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
     title: "헤어그래피 - 헤어 디자이너를 위한 올인원 앱",
     description:
       "AI 얼굴 비식별화부터 AI 인스타 작성 도우미, 포트폴리오, 고객 히스토리 관리까지. 헤어 디자이너의 모든 것을 하나의 앱에서.",
-    url: SITE_URL,
+    url: "https://hairgraphy.site",
     siteName: "헤어그래피",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
     locale: "ko_KR",

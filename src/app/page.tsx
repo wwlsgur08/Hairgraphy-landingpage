@@ -10,15 +10,14 @@ import { FAQ } from "@/components/sections/FAQ";
 import { DownloadCTA } from "@/components/sections/DownloadCTA";
 import { Footer } from "@/components/layout/Footer";
 import { FAQ_ITEMS } from "@/lib/constants";
-import { BLOG_POSTS, FEATURE_PAGES, SITE_URL } from "@/lib/seo-content";
 
 const homeJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "헤어그래피",
-    url: SITE_URL,
-    logo: `${SITE_URL}/images/logo.png`,
+    url: "https://hairgraphy.site",
+    logo: "https://hairgraphy.site/images/logo.png",
     sameAs: ["https://www.instagram.com/"],
   },
   {
@@ -28,7 +27,7 @@ const homeJsonLd = [
     applicationCategory: "BusinessApplication",
     operatingSystem: "iOS, Android",
     inLanguage: "ko-KR",
-    url: SITE_URL,
+    url: "https://hairgraphy.site",
     description:
       "헤어 디자이너를 위한 AI 얼굴 비식별화, 포트폴리오, 고객관리, 멀티 타이머, 인스타 캡션 작성 기능 제공",
     offers: {
@@ -47,28 +46,6 @@ const homeJsonLd = [
         "@type": "Answer",
         text: item.answer,
       },
-    })),
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "헤어그래피 주요 기능 페이지",
-    itemListElement: FEATURE_PAGES.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      url: `${SITE_URL}/features/${item.slug}`,
-      name: item.heroTitle,
-    })),
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "헤어그래피 블로그 가이드",
-    itemListElement: BLOG_POSTS.map((post, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      url: `${SITE_URL}/blog/${post.slug}`,
-      name: post.title,
     })),
   },
 ];

@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hairgraphy Landing Page
 
-## Getting Started
+헤어 디자이너 대상 랜딩/기능/블로그 SEO 확장 페이지를 포함한 Next.js(App Router) 프로젝트입니다.
 
-First, run the development server:
+## 로컬 실행
+
+```bash
+npm install
+npm run dev
+```
+
+브라우저에서 `http://localhost:3000` 접속.
+
+## 스크립트
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## SEO 구조
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 홈: `/`
+- 기능 페이지 6개: `/features/*`
+- 블로그 목록: `/blog`
+- 블로그 상세 8개: `/blog/*`
+- robots: `/robots.txt`
+- sitemap: `/sitemap.xml`
+- RSS: `/rss.xml`
+- OG 이미지: `/opengraph-image`
+- Twitter 이미지: `/twitter-image`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## SEO 운영 체크리스트 (배포 직후)
 
-## Learn More
+1. Google Search Console
+- 도메인 속성 등록: `https://hairgraphy.site`
+- 사이트맵 제출: `https://hairgraphy.site/sitemap.xml`
+- URL 검사/색인 요청:
+  - `https://hairgraphy.site/`
+  - 주요 기능 페이지 6개
+  - 블로그 글 8개
 
-To learn more about Next.js, take a look at the following resources:
+2. 네이버 서치어드바이저
+- 사이트 등록 및 소유 확인
+- 사이트맵 제출: `https://hairgraphy.site/sitemap.xml`
+- RSS 제출: `https://hairgraphy.site/rss.xml`
+- 주요 페이지 수집 요청
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. 배포 후 7일 모니터링
+- 색인 수(Submitted/Indexed)
+- 노출/클릭/평균순위 변화
+- 페이지별 CTR 저하 구간(타이틀/디스크립션 우선 보정)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 콘텐츠 소스
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 기능/블로그 SEO 원문 데이터: `src/lib/seo-content.ts`
+- 공통 타입: `src/types/seo.ts`

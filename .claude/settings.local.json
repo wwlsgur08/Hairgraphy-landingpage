@@ -13,7 +13,8 @@
       "Bash(copy \"C:\\\\Hairgraphy_landingpage\\\\capture\\\\1-4.png\" \"C:\\\\Hairgraphy_landingpage\\\\public\\\\images\\\\1-4.png\")",
       "Bash(npx tsc:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: 헤어그래피 랜딩페이지 구현 및 AI 체험 CTA 추가\n\n- Hero, Features, Testimonials, FAQ 등 주요 섹션 구현\n- HYDRA 색상 시스템 적용 \\(Primary #141414, Coral #E26B5F, Secondary #FFFDFA\\)\n- AI 얼굴 변경 기능 체험 CTA 섹션 추가\n- 사전 예약 폼 및 이메일 알림 API 구현\n- ScrollReveal 애니메이션 및 반응형 디자인 적용\n- Pretendard Variable 폰트 적용\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(vercel:*)"
+      "Bash(vercel:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
