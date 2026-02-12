@@ -4,6 +4,7 @@ export interface Feature {
   icon: ComponentType<{ className?: string }>;
   title: string;
   description: string;
+  href?: string;
 }
 
 export interface Step {
@@ -33,3 +34,5 @@ export interface FooterLinkGroup {
   title: string;
   links: Array<{ label: string; href: string }>;
 }
+
+export * from "./seo";
