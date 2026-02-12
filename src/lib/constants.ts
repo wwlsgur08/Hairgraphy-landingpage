@@ -30,36 +30,42 @@ export const FEATURES: Feature[] = [
     title: "AI 얼굴 비식별화",
     description:
       "모델 걱정은 그만하세요! 헤어 변경 없이 얼굴만 자연스럽게 변경합니다.",
+    href: "/features/ai-face-anonymization",
   },
   {
     icon: Camera,
     title: "포트폴리오 관리",
     description:
       "시술 전후 사진을 체계적으로 관리하고 나만의 작품집을 만들어 보세요.",
+    href: "/features/portfolio-management",
   },
   {
     icon: Users,
     title: "고객 관리",
     description:
       "고객별 시술 이력, 선호 스타일, 방문 기록을 한눈에 확인하세요.",
+    href: "/features/customer-management",
   },
   {
     icon: BookImage,
     title: "나만의 시크릿 메모장",
     description:
       "고객별 시술 노하우와 메모를 나만 볼 수 있게 안전하게 기록하세요.",
+    href: "/features/secret-notes",
   },
   {
     icon: FlaskConical,
     title: "시술 멀티 타이머",
     description:
       "여러 고객의 시술 시간을 동시에 관리하고 알림을 받으세요.",
+    href: "/features/multi-timer",
   },
   {
     icon: Heart,
     title: "AI 인스타 캡션 작성",
     description:
       "시술 사진에 딱 맞는 인스타그램 캡션을 AI가 자동으로 작성해 줍니다.",
+    href: "/features/ai-instagram-caption",
   },
 ];
 
@@ -169,17 +175,17 @@ export const FOOTER_LINKS: FooterLinkGroup[] = [
   {
     title: "서비스",
     links: [
-      { label: "기능 소개", href: "#features" },
-      { label: "요금제", href: "#" },
-      { label: "자주 묻는 질문", href: "#faq" },
+      { label: "기능 소개", href: "/features/multi-timer" },
+      { label: "블로그", href: "/blog" },
+      { label: "자주 묻는 질문", href: "/#faq" },
     ],
   },
   {
     title: "회사",
     links: [
-      { label: "회사 소개", href: "#" },
-      { label: "채용", href: "#" },
-      { label: "블로그", href: "#" },
+      { label: "홈", href: "/" },
+      { label: "추천 기능", href: "/#features" },
+      { label: "고객 후기", href: "/#testimonials" },
     ],
   },
   {

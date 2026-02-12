@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { FOOTER_LINKS } from "@/lib/constants";
 
@@ -8,13 +9,16 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
           {/* Logo */}
           <div className="col-span-2 md:col-span-1">
-            <Image
-              src="/images/logo.png"
-              alt="Hairgraphy"
-              width={140}
-              height={36}
-              className="h-8 w-auto brightness-0 invert mb-4"
-            />
+            <Link href="/" aria-label="헤어그래피 홈">
+              <Image
+                src="/images/logo.png"
+                alt="Hairgraphy"
+                width={140}
+                height={36}
+                className="h-8 w-auto brightness-0 invert mb-4"
+                sizes="140px"
+              />
+            </Link>
             <p className="text-white/40 text-sm leading-relaxed">
               헤어 디자이너를 위한
               <br />
@@ -64,12 +68,12 @@ export function Footer() {
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-white/40 hover:text-white/70 transition-colors text-sm"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

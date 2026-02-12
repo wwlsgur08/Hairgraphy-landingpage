@@ -1,13 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import type { MouseEvent } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
 export function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
@@ -32,10 +36,27 @@ export function Navbar() {
     };
   }, [isMobileOpen]);
 
-  const scrollTo = (href: string) => {
-    setIsMobileOpen(false);
+  const scrollToSection = (href: string) => {
     const id = href.replace("#", "");
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const sectionHref = (href: string) => (pathname === "/" ? href : `/${href}`);
+
+  const handleSectionClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    setIsMobileOpen(false);
+    if (pathname !== "/") return;
+    event.preventDefault();
+    scrollToSection(href);
+  };
+
+  const handleDownloadClick = () => {
+    setIsMobileOpen(false);
+    if (pathname === "/") {
+      scrollToSection("#download");
+      return;
+    }
+    window.location.href = "/#download";
   };
 
   return (
@@ -50,9 +71,11 @@ export function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 md:px-6 h-16 md:h-[72px] flex items-center justify-between">
         {/* Logo */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        <Link
+          href="/"
+          onClick={() => setIsMobileOpen(false)}
           className="cursor-pointer"
+          aria-label="헤어그래피 홈"
         >
           <Image
             src="/images/logo.png"
@@ -61,24 +84,32 @@ export function Navbar() {
             height={36}
             className="h-7 md:h-9 w-auto"
             priority
+            sizes="(max-width: 768px) 120px, 140px"
           />
-        </button>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <button
+            <Link
               key={link.href}
-              onClick={() => scrollTo(link.href)}
+              href={sectionHref(link.href)}
+              onClick={(event) => handleSectionClick(event, link.href)}
               className="text-text-secondary hover:text-primary transition-colors cursor-pointer text-sm font-medium"
             >
               {link.label}
-            </button>
+            </Link>
           ))}
+          <Link
+            href="/blog"
+            className="text-text-secondary hover:text-primary transition-colors cursor-pointer text-sm font-medium"
+          >
+            블로그
+          </Link>
           <Button
             variant="coral"
             size="sm"
-            onClick={() => scrollTo("#download")}
+            onClick={handleDownloadClick}
           >
             사전 예약
           </Button>
@@ -110,17 +141,28 @@ export function Navbar() {
           >
             <div className="px-6 py-8 flex flex-col gap-1">
               {NAV_LINKS.map((link, index) => (
-                <motion.button
+                <motion.div
                   key={link.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  onClick={() => scrollTo(link.href)}
-                  className="text-text-primary text-lg font-medium py-3 text-left cursor-pointer min-h-[44px]"
                 >
-                  {link.label}
-                </motion.button>
+                  <Link
+                    href={sectionHref(link.href)}
+                    onClick={(event) => handleSectionClick(event, link.href)}
+                    className="block text-text-primary text-lg font-medium py-3 text-left cursor-pointer min-h-[44px]"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
+              <Link
+                href="/blog"
+                onClick={() => setIsMobileOpen(false)}
+                className="text-text-primary text-lg font-medium py-3 text-left cursor-pointer min-h-[44px]"
+              >
+                블로그
+              </Link>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -129,7 +171,7 @@ export function Navbar() {
                 <Button
                   variant="coral"
                   size="lg"
-                  onClick={() => scrollTo("#download")}
+                  onClick={handleDownloadClick}
                   className="w-full mt-4"
                 >
                   사전 예약

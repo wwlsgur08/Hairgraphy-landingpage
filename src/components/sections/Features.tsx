@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { FEATURES } from "@/lib/constants";
@@ -20,7 +21,16 @@ export function Features() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {FEATURES.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 0.1}>
-              <FeatureCard {...feature} />
+              <Link
+                href={feature.href ?? "/"}
+                className="block group"
+                aria-label={`${feature.title} 상세 페이지 이동`}
+              >
+                <FeatureCard {...feature} />
+                <span className="mt-2 inline-flex text-xs md:text-sm font-semibold text-coral group-hover:underline">
+                  자세히 보기
+                </span>
+              </Link>
             </ScrollReveal>
           ))}
         </div>

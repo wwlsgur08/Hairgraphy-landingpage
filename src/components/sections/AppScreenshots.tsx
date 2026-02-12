@@ -40,6 +40,7 @@ export function AppScreenshots() {
                 width={260}
                 height={563}
                 className="w-full h-auto object-cover"
+                sizes="(max-width: 768px) 130px, 260px"
               />
             </div>
           </ScrollReveal>

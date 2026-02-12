@@ -102,17 +102,6 @@ export function Hero() {
             >
               <PhoneMockup className="w-[180px] md:w-[300px]">
                 <div className="w-full h-full relative overflow-hidden">
-                  {/* Preload all images hidden */}
-                  {HERO_SCREENS.map((screen) => (
-                    <Image
-                      key={`preload-${screen.src}`}
-                      src={screen.src}
-                      alt=""
-                      fill
-                      className="opacity-0 pointer-events-none"
-                      priority
-                    />
-                  ))}
                   <AnimatePresence initial={false}>
                     <motion.div
                       key={current}
@@ -127,6 +116,8 @@ export function Hero() {
                         alt={HERO_SCREENS[current].alt}
                         fill
                         className="object-cover"
+                        sizes="(max-width: 768px) 180px, 300px"
+                        priority={current === 0}
                       />
                     </motion.div>
                   </AnimatePresence>
