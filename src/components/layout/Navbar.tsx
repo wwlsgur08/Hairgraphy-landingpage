@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
@@ -106,6 +106,14 @@ export function Navbar() {
           >
             블로그
           </Link>
+          <a
+            href="mailto:wwlsgur08@naver.com"
+            className="flex items-center gap-1.5 text-text-secondary hover:text-coral transition-colors cursor-pointer text-sm font-medium"
+            aria-label="이메일 문의"
+          >
+            <Mail className="w-4 h-4" />
+            <span>문의</span>
+          </a>
           <Button
             variant="coral"
             size="sm"
@@ -163,6 +171,14 @@ export function Navbar() {
               >
                 블로그
               </Link>
+              <a
+                href="mailto:wwlsgur08@naver.com"
+                onClick={() => setIsMobileOpen(false)}
+                className="flex items-center gap-2 text-text-primary text-lg font-medium py-3 text-left cursor-pointer min-h-[44px]"
+              >
+                <Mail className="w-5 h-5" />
+                <span>문의 (wwlsgur08@naver.com)</span>
+              </a>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
