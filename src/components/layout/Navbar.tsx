@@ -50,14 +50,7 @@ export function Navbar() {
     scrollToSection(href);
   };
 
-  const handleDownloadClick = () => {
-    setIsMobileOpen(false);
-    if (pathname === "/") {
-      scrollToSection("#download");
-      return;
-    }
-    window.location.href = "/#download";
-  };
+  const APP_STORE_URL = "https://apps.apple.com/kr/app/hairgraphy/id6758673452";
 
   return (
     <nav
@@ -90,6 +83,14 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
+          <a
+            href="mailto:wwlsgur08@naver.com"
+            className="flex items-center gap-1.5 text-text-primary hover:text-coral transition-colors cursor-pointer text-sm font-bold"
+            aria-label="이메일 문의"
+          >
+            <Mail className="w-4 h-4" />
+            <span>문의: wwlsgur08@naver.com</span>
+          </a>
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -107,34 +108,37 @@ export function Navbar() {
             블로그
           </Link>
           <a
-            href="mailto:wwlsgur08@naver.com"
-            className="flex items-center gap-1.5 text-text-secondary hover:text-coral transition-colors cursor-pointer text-sm font-medium"
-            aria-label="이메일 문의"
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Mail className="w-4 h-4" />
-            <span>문의</span>
+            <Button variant="coral" size="sm">
+              App Store에서 다운로드
+            </Button>
           </a>
-          <Button
-            variant="coral"
-            size="sm"
-            onClick={handleDownloadClick}
-          >
-            사전 예약
-          </Button>
         </div>
 
-        {/* Mobile hamburger - 44px touch target */}
-        <button
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer"
-          aria-label={isMobileOpen ? "메뉴 닫기" : "메뉴 열기"}
-        >
-          {isMobileOpen ? (
-            <X className="w-6 h-6 text-primary" />
-          ) : (
-            <Menu className="w-6 h-6 text-primary" />
-          )}
-        </button>
+        {/* Mobile: Email + Hamburger */}
+        <div className="md:hidden flex items-center gap-2">
+          <a
+            href="mailto:wwlsgur08@naver.com"
+            className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer"
+            aria-label="이메일 문의: wwlsgur08@naver.com"
+          >
+            <Mail className="w-5 h-5 text-primary" />
+          </a>
+          <button
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer"
+            aria-label={isMobileOpen ? "메뉴 닫기" : "메뉴 열기"}
+          >
+            {isMobileOpen ? (
+              <X className="w-6 h-6 text-primary" />
+            ) : (
+              <Menu className="w-6 h-6 text-primary" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu - fullscreen overlay */}
@@ -171,27 +175,21 @@ export function Navbar() {
               >
                 블로그
               </Link>
-              <a
-                href="mailto:wwlsgur08@naver.com"
-                onClick={() => setIsMobileOpen(false)}
-                className="flex items-center gap-2 text-text-primary text-lg font-medium py-3 text-left cursor-pointer min-h-[44px]"
-              >
-                <Mail className="w-5 h-5" />
-                <span>문의 (wwlsgur08@naver.com)</span>
-              </a>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <Button
-                  variant="coral"
-                  size="lg"
-                  onClick={handleDownloadClick}
-                  className="w-full mt-4"
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileOpen(false)}
                 >
-                  사전 예약
-                </Button>
+                  <Button variant="coral" size="lg" className="w-full mt-4">
+                    App Store에서 다운로드
+                  </Button>
+                </a>
               </motion.div>
             </div>
           </motion.div>

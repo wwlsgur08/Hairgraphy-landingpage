@@ -2,21 +2,24 @@
 
 import { cn } from "@/lib/utils";
 
+const STORE_URLS = {
+  apple: "https://apps.apple.com/kr/app/hairgraphy/id6758673452",
+  google: "",
+};
+
 interface StoreButtonProps {
   store: "apple" | "google";
   className?: string;
 }
 
 export function StoreButton({ store, className }: StoreButtonProps) {
-  const handleClick = () => {
-    alert("곧 출시됩니다! 조금만 기다려 주세요.");
-  };
-
   return (
-    <button
-      onClick={handleClick}
+    <a
+      href={STORE_URLS[store]}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
-        "inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-primary text-white hover:bg-primary-light transition-colors duration-200 cursor-pointer",
+        "inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white/10 text-white hover:bg-white/20 border border-white/20 transition-colors duration-200 cursor-pointer",
         className
       )}
     >
@@ -37,6 +40,6 @@ export function StoreButton({ store, className }: StoreButtonProps) {
           {store === "apple" ? "다운로드" : "다운로드"}
         </div>
       </div>
-    </button>
+    </a>
   );
 }

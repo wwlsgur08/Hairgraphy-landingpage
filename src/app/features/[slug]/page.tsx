@@ -148,7 +148,7 @@ export default async function FeaturePage({ params }: FeaturePageProps) {
           </div>
         </section>
 
-        <section className="py-14 md:py-20 bg-surface">
+        <section className="py-14 md:py-20 bg-background">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
               현장에서 자주 겪는 문제
@@ -168,9 +168,14 @@ export default async function FeaturePage({ params }: FeaturePageProps) {
               {feature.solutionSteps.map((step, index) => (
                 <li
                   key={step}
-                  className="rounded-xl border border-border-light bg-card px-4 py-4 md:px-6"
+                  className="rounded-xl border border-border-light bg-background px-4 py-4 md:px-6"
                 >
-                  <p className="font-semibold text-coral mb-1">Step {index + 1}</p>
+                  <p className="font-semibold text-coral mb-2 inline-flex items-center gap-2">
+                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-coral text-white text-xs leading-none">
+                      !
+                    </span>
+                    Step {index + 1}
+                  </p>
                   <p className="text-text-secondary leading-relaxed">{step}</p>
                 </li>
               ))}
@@ -178,7 +183,7 @@ export default async function FeaturePage({ params }: FeaturePageProps) {
           </div>
         </section>
 
-        <section className="py-14 md:py-20 bg-surface">
+        <section className="py-14 md:py-20 bg-background">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-5">
               기대할 수 있는 변화
@@ -187,9 +192,12 @@ export default async function FeaturePage({ params }: FeaturePageProps) {
               {feature.outcomes.map((outcome) => (
                 <li
                   key={outcome}
-                  className="rounded-xl border border-border-light bg-card px-4 py-4 md:px-6 text-text-secondary leading-relaxed"
+                  className="rounded-xl border border-border-light bg-background px-4 py-4 md:px-6 text-text-secondary leading-relaxed"
                 >
-                  {outcome}
+                  <span className="inline-flex items-center gap-2 text-base md:text-lg font-medium text-primary">
+                    <span className="text-coral font-bold">!</span>
+                    <span>{outcome}</span>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -205,10 +213,11 @@ export default async function FeaturePage({ params }: FeaturePageProps) {
               {feature.faqs.map((faq) => (
                 <article
                   key={faq.question}
-                  className="rounded-xl border border-border-light bg-card px-4 py-4 md:px-6"
+                  className="rounded-xl border border-border-light bg-background px-4 py-4 md:px-6"
                 >
-                  <h3 className="text-base md:text-lg font-semibold text-primary mb-2">
-                    {faq.question}
+                  <h3 className="text-base md:text-lg font-semibold text-primary mb-2 inline-flex items-start gap-2">
+                    <span className="text-coral font-bold mt-0.5">!</span>
+                    <span>{faq.question}</span>
                   </h3>
                   <p className="text-text-secondary leading-relaxed">{faq.answer}</p>
                 </article>
@@ -217,7 +226,7 @@ export default async function FeaturePage({ params }: FeaturePageProps) {
           </div>
         </section>
 
-        <section className="py-14 md:py-20 bg-surface">
+        <section className="py-14 md:py-20 bg-background">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">
               관련 가이드
@@ -227,7 +236,7 @@ export default async function FeaturePage({ params }: FeaturePageProps) {
                 <Link
                   key={blog.slug}
                   href={`/blog/${blog.slug}`}
-                  className="block rounded-xl border border-border-light bg-card px-5 py-5 hover:-translate-y-0.5 transition-transform"
+                  className="block rounded-xl border border-border-light bg-background px-5 py-5 hover:-translate-y-0.5 transition-transform"
                 >
                   <h3 className="text-base md:text-lg font-semibold text-primary mb-2">
                     {blog.title}
@@ -241,24 +250,26 @@ export default async function FeaturePage({ params }: FeaturePageProps) {
           </div>
         </section>
 
-        <section className="py-16 md:py-20 bg-primary">
+        <section className="py-16 md:py-20 bg-background border-t border-border">
           <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-4">
               헤어그래피로 바로 적용해 보세요
             </h2>
-            <p className="text-white/70 mb-7">
+            <p className="text-text-secondary mb-7">
               기능 설명만 보는 단계에서 끝내지 말고, 실제 현장에서 테스트해 보세요.
             </p>
             <div className="flex flex-col md:flex-row gap-3 justify-center">
-              <Link
-                href="/#download"
+              <a
+                href="https://apps.apple.com/kr/app/hairgraphy/id6758673452"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-coral text-white font-semibold hover:bg-coral-dark transition-colors"
               >
-                사전 예약하고 알림 받기
-              </Link>
+                App Store에서 다운로드
+              </a>
               <Link
                 href="/blog"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-white/40 text-white font-semibold hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border text-primary font-semibold hover:bg-surface transition-colors"
               >
                 관련 블로그 더 보기
               </Link>

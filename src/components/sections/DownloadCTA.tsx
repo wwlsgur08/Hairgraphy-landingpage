@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { ScrollReveal } from "@/components/animation/ScrollReveal";
-import { PreRegisterForm } from "@/components/ui/PreRegisterForm";
+import { StoreButton } from "@/components/ui/StoreButton";
 
 export function DownloadCTA() {
   return (
@@ -20,13 +20,13 @@ export function DownloadCTA() {
       <div className="max-w-3xl mx-auto px-4 md:px-6 text-center relative z-10">
         <ScrollReveal>
           <h2 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-4">
-            사전 예약하고 먼저 만나보세요
+            지금 바로 다운로드하세요
           </h2>
           <p className="text-white/60 text-base md:text-lg mb-8 md:mb-10 max-w-xl mx-auto">
-            출시 알림을 가장 먼저 받아보세요
+            App Store에서 헤어그래피를 만나보세요
           </p>
           <div className="flex justify-center">
-            <PreRegisterForm variant="dark" />
+            <StoreButton store="apple" />
           </div>
         </ScrollReveal>
       </div>

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { Badge } from "@/components/ui/Badge";
-import { PreRegisterForm } from "@/components/ui/PreRegisterForm";
+import { Button } from "@/components/ui/Button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
 
 const containerVariants = {
@@ -85,7 +85,15 @@ export function Hero() {
             </motion.p>
 
             <motion.div variants={itemVariants}>
-              <PreRegisterForm variant="light" />
+              <a
+                href="https://apps.apple.com/kr/app/hairgraphy/id6758673452"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="coral" size="lg">
+                  App Store에서 다운로드
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
 

@@ -235,6 +235,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
             </div>
           </section>
+
+          <section className="py-14 md:py-20 bg-background border-t border-border">
+            <div className="max-w-4xl mx-auto px-4 md:px-6">
+              <div className="rounded-2xl border border-border-light bg-card p-6 md:p-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3">
+                  이 내용을 더 효과적으로 실행하고 싶다면
+                </h2>
+                <p className="text-text-secondary leading-relaxed mb-6">
+                  헤어그래피 랜딩에서 핵심 기능을 한 번에 확인하고, 바로 무료 체험으로
+                  연결해 보세요.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href="/"
+                    className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-primary text-white font-semibold hover:bg-primary-dark transition-colors"
+                  >
+                    랜딩 첫 화면으로 이동
+                  </Link>
+                  <a
+                    href="https://apps.apple.com/kr/app/hairgraphy/id6758673452"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-5 py-3 rounded-full border border-border text-primary font-semibold hover:bg-surface transition-colors"
+                  >
+                    App Store에서 다운로드
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
         </article>
       </main>
       <script
