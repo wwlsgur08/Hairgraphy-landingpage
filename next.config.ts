@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         destination: "https://hairgraphy.site",
         permanent: false,
       },
+      {
+        source: "/a",
+        destination: "/android",
+        permanent: false,
+      },
     ];
   },
 };
