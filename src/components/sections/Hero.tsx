@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
@@ -84,7 +85,12 @@ export function Hero() {
               {" "}헤어 디자이너의 모든 것을 하나의 앱에서.
             </motion.p>
 
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3">
+              <Link href="/android">
+                <Button variant="primary" size="lg">
+                  Android 다운로드
+                </Button>
+              </Link>
               <a
                 href="https://apps.apple.com/kr/app/hairgraphy/id6758673452"
                 target="_blank"

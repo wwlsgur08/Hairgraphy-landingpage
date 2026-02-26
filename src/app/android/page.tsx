@@ -63,8 +63,7 @@ export default function AndroidPage() {
 
           {/* Download Button */}
           <a
-            href="/hairgraphy.apk"
-            download
+            href="https://expo.dev/artifacts/eas/ivfvUgQKZsum2S51mJBxxo.apk"
             className="inline-flex items-center justify-center gap-2 w-full px-8 py-4 rounded-full bg-coral text-white text-lg font-semibold hover:bg-coral-dark transition-colors"
           >
             <Download className="w-5 h-5" />

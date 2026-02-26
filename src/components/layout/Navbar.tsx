@@ -107,13 +107,18 @@ export function Navbar() {
           >
             블로그
           </Link>
+          <Link href="/android">
+            <Button variant="primary" size="sm">
+              Android
+            </Button>
+          </Link>
           <a
             href={APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button variant="coral" size="sm">
-              App Store에서 다운로드
+              App Store
             </Button>
           </a>
         </div>
@@ -180,13 +185,21 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
+                <Link
+                  href="/android"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  <Button variant="primary" size="lg" className="w-full mt-4">
+                    Android 다운로드
+                  </Button>
+                </Link>
                 <a
                   href={APP_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMobileOpen(false)}
                 >
-                  <Button variant="coral" size="lg" className="w-full mt-4">
+                  <Button variant="coral" size="lg" className="w-full mt-2">
                     App Store에서 다운로드
                   </Button>
                 </a>
