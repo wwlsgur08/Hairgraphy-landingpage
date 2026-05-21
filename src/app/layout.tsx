@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { pretendard } from "./fonts";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { NaverAnalytics } from "@/components/analytics/NaverAnalytics";
@@ -8,7 +9,8 @@ import "./globals.css";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  // 접근성: 사용자 확대 허용 (Lighthouse 권장사항)
+  maximumScale: 5,
   viewportFit: "cover",
   themeColor: "#FFFDFA",
 };
@@ -36,6 +38,9 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": "/rss.xml",
+    },
   },
   openGraph: {
     title: "헤어그래피 - 매일의 시술이 포트폴리오가 돼요",
@@ -65,14 +70,21 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  other: {
-    // Mobile app deep-link hints (KakaoTalk, Facebook, Twitter 모두 al:* 메타 인식)
-    "al:ios:url": "hairgraphy://",
-    "al:ios:app_name": "헤어그래피",
-    "al:android:url": "hairgraphy://",
-    "al:android:package": "com.hairgraphy.app",
-    "al:android:app_name": "헤어그래피",
-    "al:web:should_fallback": "true",
+  appLinks: {
+    ios: {
+      url: "hairgraphy://",
+      app_store_id: "6758673452",
+      app_name: "헤어그래피",
+    },
+    android: {
+      package: "com.hairgraphy.app",
+      url: "hairgraphy://",
+      app_name: "헤어그래피",
+    },
+    web: {
+      url: "https://hairgraphy.site",
+      should_fallback: true,
+    },
   },
 };
 
@@ -86,9 +98,5 @@ export default function RootLayout({
       <body className={`${pretendard.variable} antialiased`}>
         {children}
         <Analytics />
-        <GoogleAnalytics />
-        <NaverAnalytics />
-      </body>
-    </html>
-  );
-}
+        <SpeedInsights />
+        <GoogleAnalyti

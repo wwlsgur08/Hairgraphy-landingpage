@@ -721,6 +721,7 @@ export const BLOG_POST_MAP = new Map(BLOG_POSTS.map((item) => [item.slug, item])
 
 export const INDEXABLE_PATHS = [
   "/",
+  "/android",
   ...FEATURE_PAGES.map((item) => `/features/${item.slug}`),
   "/blog",
   ...BLOG_POSTS.map((item) => `/blog/${item.slug}`),
