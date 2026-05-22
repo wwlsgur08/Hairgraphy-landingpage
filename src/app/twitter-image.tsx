@@ -5,7 +5,7 @@ export const size = {
   height: 630,
 };
 
-export const alt = "헤어그래피 - 헤어 디자이너를 위한 올인원 앱";
+export const alt = "헤어그래피 - 매일의 시술이 포트폴리오가 돼요";
 export const contentType = "image/png";
 
 export default function Image() {

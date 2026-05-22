@@ -5,7 +5,7 @@ export const size = {
   height: 630,
 };
 
-export const alt = "헤어그래피 - 헤어 디자이너를 위한 올인원 앱";
+export const alt = "헤어그래피 - 매일의 시술이 포트폴리오가 돼요";
 export const contentType = "image/png";
 
 export default function Image() {
@@ -29,7 +29,7 @@ export default function Image() {
           Hairgraphy
         </div>
         <div style={{ fontSize: 62, fontWeight: 800, lineHeight: 1.2, whiteSpace: "pre-wrap" }}>
-          {"헤어 디자이너를 위한\n올인원 운영 앱"}
+          {"매일의 시술이\n포트폴리오가 돼요"}
         </div>
         <div style={{ marginTop: 24, fontSize: 30, color: "#5f5f5f" }}>
           AI 비식별화 · 포트폴리오 · 고객관리 · 멀티 타이머

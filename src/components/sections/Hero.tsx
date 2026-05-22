@@ -26,12 +26,12 @@ const itemVariants = {
 };
 
 const HERO_SCREENS = [
-  { src: "/images/1-1.png", alt: "앱 메인 화면" },
-  { src: "/images/1-2.png", alt: "앱 화면 2" },
-  { src: "/images/1-3.png", alt: "앱 화면 3" },
-  { src: "/images/1-4.png", alt: "앱 화면 4" },
-  { src: "/images/1-5.png", alt: "앱 화면 5" },
-  { src: "/images/1-6.png", alt: "앱 화면 6" },
+  { src: "/images/1-1.png", alt: "헤어그래피 앱 메인 화면 - 헤어 디자이너 시술 기록" },
+  { src: "/images/1-2.png", alt: "헤어그래피 시술 기록 입력 화면 - 사진과 메모로 30초 기록" },
+  { src: "/images/1-3.png", alt: "헤어그래피 고객 관리 화면 - 시술 이력 타임라인" },
+  { src: "/images/1-4.png", alt: "헤어그래피 포트폴리오 화면 - 디자이너 작업물 정리" },
+  { src: "/images/1-5.png", alt: "헤어그래피 AI 얼굴 비식별화 화면 - 초상권 부담 없는 SNS 업로드" },
+  { src: "/images/1-6.png", alt: "헤어그래피 멀티 타이머 화면 - 동시 시술 시간 관리" },
 ];
 
 export function Hero() {
@@ -65,7 +65,7 @@ export function Hero() {
             animate="visible"
           >
             <motion.div variants={itemVariants}>
-              <Badge>헤어 디자이너를 위한 올인원 앱</Badge>
+              <Badge>헤어 디자이너를 위한 기록 앱</Badge>
             </motion.div>
 
             <motion.h1

@@ -22,7 +22,7 @@ export function Footer() {
             <p className="text-white/40 text-sm leading-relaxed">
               헤어 디자이너를 위한
               <br />
-              올인원 앱
+              기록 앱
             </p>
             {/* Social icons */}
             <div className="flex gap-4 mt-6">

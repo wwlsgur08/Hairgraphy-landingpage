@@ -30,20 +30,40 @@ export const metadata: Metadata = {
 };
 
 export default function BlogIndexPage() {
-  const collectionJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: "헤어그래피 블로그",
-    url: `${SITE_URL}/blog`,
-    inLanguage: "ko-KR",
-    hasPart: BLOG_POSTS.map((post) => ({
-      "@type": "BlogPosting",
-      headline: post.title,
-      url: `${SITE_URL}/blog/${post.slug}`,
-      datePublished: post.publishedAt,
-      dateModified: post.updatedAt,
-    })),
-  };
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "헤어그래피 블로그",
+      url: `${SITE_URL}/blog`,
+      inLanguage: "ko-KR",
+      hasPart: BLOG_POSTS.map((post) => ({
+        "@type": "BlogPosting",
+        headline: post.title,
+        url: `${SITE_URL}/blog/${post.slug}`,
+        datePublished: post.publishedAt,
+        dateModified: post.updatedAt,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "홈",
+          item: SITE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "블로그",
+          item: `${SITE_URL}/blog`,
+        },
+      ],
+    },
+  ];
 
   return (
     <>
@@ -96,7 +116,7 @@ export default function BlogIndexPage() {
       </main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Footer />
     </>

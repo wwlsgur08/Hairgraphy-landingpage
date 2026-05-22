@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["8MZ99WCMSW.com.hairgraphy.app"],
+        "components": [
+          {
+            "/": "/invite/*",
+            "comment": "Referral deep link"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["8MZ99WCMSW.com.hairgraphy.app"]
+  }
+}

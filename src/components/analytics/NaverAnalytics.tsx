@@ -7,10 +7,10 @@ export function NaverAnalytics() {
   return (
     <>
       <Script
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         src="//wcs.naver.net/wcslog.js"
       />
-      <Script id="naver-analytics-init" strategy="afterInteractive">
+      <Script id="naver-analytics-init" strategy="lazyOnload">
         {`
           if (!wcs_add) var wcs_add = {};
           wcs_add["wa"] = "${naverId}";

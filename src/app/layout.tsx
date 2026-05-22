@@ -99,4 +99,9 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
-        <GoogleAnalyti
+        <GoogleAnalytics />
+        <NaverAnalytics />
+      </body>
+    </html>
+  );
+}
