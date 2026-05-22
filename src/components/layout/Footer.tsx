@@ -4,7 +4,7 @@ import { FOOTER_LINKS } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="bg-primary pt-12 md:pt-16 pb-8">
+    <footer className="bg-surface pt-12 md:pt-16 pb-8 border-t border-border">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
           {/* Logo */}
@@ -15,11 +15,11 @@ export function Footer() {
                 alt="Hairgraphy"
                 width={140}
                 height={36}
-                className="h-8 w-auto brightness-0 invert mb-4"
+                className="h-8 w-auto mb-4"
                 sizes="140px"
               />
             </Link>
-            <p className="text-white/40 text-sm leading-relaxed">
+            <p className="text-text-secondary text-sm leading-relaxed">
               헤어 디자이너를 위한
               <br />
               기록 앱
@@ -29,7 +29,7 @@ export function Footer() {
               {/* Instagram */}
               <a
                 href="#"
-                className="text-white/40 hover:text-coral transition-colors"
+                className="text-text-tertiary hover:text-coral transition-colors"
                 aria-label="Instagram"
               >
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
@@ -39,7 +39,7 @@ export function Footer() {
               {/* YouTube */}
               <a
                 href="#"
-                className="text-white/40 hover:text-coral transition-colors"
+                className="text-text-tertiary hover:text-coral transition-colors"
                 aria-label="YouTube"
               >
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
@@ -49,7 +49,7 @@ export function Footer() {
               {/* KakaoTalk */}
               <a
                 href="#"
-                className="text-white/40 hover:text-coral transition-colors"
+                className="text-text-tertiary hover:text-coral transition-colors"
                 aria-label="KakaoTalk"
               >
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
@@ -62,7 +62,7 @@ export function Footer() {
           {/* Link groups */}
           {FOOTER_LINKS.map((group) => (
             <div key={group.title}>
-              <h3 className="text-white font-semibold mb-4 text-sm">
+              <h3 className="text-text-primary font-semibold mb-4 text-sm">
                 {group.title}
               </h3>
               <ul className="space-y-3">
@@ -70,7 +70,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-white/40 hover:text-white/70 transition-colors text-sm"
+                      className="text-text-secondary hover:text-text-primary transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -82,8 +82,8 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-8 text-center">
-          <p className="text-white/30 text-sm">
+        <div className="border-t border-border pt-8 text-center">
+          <p className="text-text-tertiary text-sm">
             &copy; 2026 Hairgraphy. All rights reserved.
           </p>
         </div>

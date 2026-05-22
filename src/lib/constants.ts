@@ -164,10 +164,10 @@ export const FAQ_ITEMS: FAQItem[] = [
 ];
 
 export const SCREENSHOT_SCREENS = [
-  { title: "포트폴리오", color: "#E26B5F" },
-  { title: "AI 분석", color: "#141414" },
+  { title: "포트폴리오", color: "#83a4ff" },
+  { title: "AI 분석", color: "#1b2228" },
   { title: "고객 관리", color: "#5f5f5f" },
-  { title: "스타일북", color: "#c95a4f" },
+  { title: "스타일북", color: "#6b8fee" },
   { title: "레시피", color: "#2d2d2d" },
 ];
 

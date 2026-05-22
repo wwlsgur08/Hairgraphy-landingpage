@@ -46,16 +46,6 @@ export function Hero() {
 
   return (
     <section className="min-h-[100dvh] flex items-center pt-16 md:pt-[72px] relative overflow-hidden">
-      {/* Background glow */}
-      <motion.div
-        className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] rounded-full bg-coral/15 blur-[80px] md:blur-[120px] pointer-events-none"
-        animate={{
-          scale: [1, 1.05, 1],
-          opacity: [0.15, 0.25, 0.15],
-        }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      />
-
       <div className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-20 w-full">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-8 items-center">
           {/* Text content */}

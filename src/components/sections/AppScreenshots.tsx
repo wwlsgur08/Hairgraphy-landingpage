@@ -33,7 +33,7 @@ export function AppScreenshots() {
             delay={index * 0.1}
             className="snap-center shrink-0"
           >
-            <div className="w-[130px] md:w-[260px] rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
+            <div className="w-[130px] md:w-[260px] rounded-xl overflow-hidden border border-border">
               <Image
                 src={shot.src}
                 alt={shot.alt}

@@ -27,7 +27,7 @@ export function RecommendFor() {
         <div className="flex flex-col gap-3 md:gap-4 max-w-2xl mx-auto">
           {TARGETS.map((item, index) => (
             <ScrollReveal key={item.title} delay={index * 0.08}>
-              <div className="flex items-center gap-3 md:gap-4 p-4 md:py-5 md:px-6 rounded-xl md:rounded-2xl border border-border-light hover:-translate-y-0.5 transition-transform duration-300">
+              <div className="flex items-center gap-3 md:gap-4 p-4 md:py-5 md:px-6 rounded-xl border border-border-light hover:-translate-y-0.5 transition-transform duration-300">
                 <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-coral/10 flex items-center justify-center shrink-0">
                   <item.icon className="w-4 h-4 md:w-5 md:h-5 text-coral" />
                 </div>

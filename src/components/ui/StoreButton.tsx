@@ -19,7 +19,7 @@ export function StoreButton({ store, className }: StoreButtonProps) {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white/10 text-white hover:bg-white/20 border border-white/20 transition-colors duration-200 cursor-pointer",
+        "inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-card text-text-primary hover:bg-background border border-border transition-colors duration-200 cursor-pointer",
         className
       )}
     >
@@ -33,7 +33,7 @@ export function StoreButton({ store, className }: StoreButtonProps) {
         </svg>
       )}
       <div className="text-left">
-        <div className="text-[10px] opacity-80">
+        <div className="text-[10px] text-text-tertiary">
           {store === "apple" ? "App Store에서" : "Google Play에서"}
         </div>
         <div className="text-sm font-semibold -mt-0.5">
