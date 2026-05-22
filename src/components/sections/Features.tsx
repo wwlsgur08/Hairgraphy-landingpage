@@ -12,10 +12,10 @@ export function Features() {
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <ScrollReveal className="text-center mb-10 md:mb-16">
           <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3 md:mb-4">
-            디자이너를 위한 스마트 기능
+            흩어진 시술 기록을, 다시 쓰이는 자산으로.
           </h2>
           <p className="text-text-secondary text-base md:text-lg max-w-2xl mx-auto">
-            헤어그래피 하나로 고객 상담부터 시술, 관리까지 완벽하게
+            Hairgraphy의 핵심 기능
           </p>
         </ScrollReveal>
 
