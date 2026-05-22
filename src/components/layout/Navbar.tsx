@@ -101,12 +101,6 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/blog"
-            className="text-text-secondary hover:text-primary transition-colors cursor-pointer text-sm font-medium"
-          >
-            블로그
-          </Link>
           <Link href="/android">
             <Button variant="primary" size="sm">
               Android
@@ -173,13 +167,6 @@ export function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <Link
-                href="/blog"
-                onClick={() => setIsMobileOpen(false)}
-                className="text-text-primary text-lg font-medium py-3 text-left cursor-pointer min-h-[44px]"
-              >
-                블로그
-              </Link>
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
