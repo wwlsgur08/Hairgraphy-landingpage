@@ -16,7 +16,7 @@ export function Button({
   return (
     <button
       className={cn(
-        "inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 cursor-pointer",
+        "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 cursor-pointer",
         variant === "primary" &&
           "bg-primary text-white hover:bg-primary-light",
         variant === "coral" &&
