@@ -21,7 +21,8 @@ import type {
 
 export const NAV_LINKS: NavLink[] = [
   { label: "기능", href: "#features" },
-  { label: "리뷰", href: "#testimonials" },
+  { label: "사용 흐름", href: "#workflow" },
+  { label: "후기", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
 ];
 
