@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { ProblemAwareness } from "@/components/sections/ProblemAwareness";
+import { ProblemSolutionScroll } from "@/components/sections/ProblemSolutionScroll";
 import { Features } from "@/components/sections/Features";
 import { AIFaceSwapCTA } from "@/components/sections/AIFaceSwapCTA";
 import { DailyWorkflow } from "@/components/sections/DailyWorkflow";
@@ -58,6 +59,7 @@ export default function Home() {
       <main>
         <Hero />
         <ProblemAwareness />
+        <ProblemSolutionScroll />
         <Features />
         <AIFaceSwapCTA />
         <DailyWorkflow />
