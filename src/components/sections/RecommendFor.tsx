@@ -43,7 +43,7 @@ export function RecommendFor() {
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <ScrollReveal className="text-center mb-10 md:mb-16">
           <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3 md:mb-4">
-            이런 디자이너라면 Hairgraphy가 필요합니다
+            이런 순간이 반복된다면, Hairgraphy가 필요합니다.
           </h2>
         </ScrollReveal>
 
