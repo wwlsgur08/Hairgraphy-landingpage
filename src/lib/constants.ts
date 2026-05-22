@@ -8,6 +8,7 @@ import {
   Download,
   UserPlus,
   Rocket,
+  Zap,
 } from "lucide-react";
 import type {
   Feature,
@@ -26,46 +27,45 @@ export const NAV_LINKS: NavLink[] = [
 
 export const FEATURES: Feature[] = [
   {
-    icon: ScanFace,
-    title: "AI 얼굴 비식별화",
+    icon: Zap,
+    title: "쉽고 빠른 헤어 기록",
     description:
-      "모델 걱정은 그만하세요! 헤어 변경 없이 얼굴만 자연스럽게 변경합니다.",
-    href: "/features/ai-face-anonymization",
+      "시술 직후 30초. 사진과 레시피, 짧은 메모를 한 번에 남겨 두면 시술 기록이 자연스럽게 쌓여요.",
+  },
+  {
+    icon: Users,
+    title: "고객 히스토리",
+    description:
+      "고객별 시술 이력과 선호 스타일이 타임라인으로 정리돼, 재방문 상담이 한결 수월해져요.",
+    href: "/features/customer-management",
   },
   {
     icon: Camera,
     title: "포트폴리오 관리",
     description:
-      "시술 전후 사진을 체계적으로 관리하고 나만의 작품집을 만들어 보세요.",
+      "시술 사진을 작품집처럼 정돈해, 그날의 작업을 그대로 나만의 자산으로 쌓아갈 수 있어요.",
     href: "/features/portfolio-management",
   },
   {
-    icon: Users,
-    title: "고객 관리",
+    icon: ScanFace,
+    title: "AI 얼굴 비식별화",
     description:
-      "고객별 시술 이력, 선호 스타일, 방문 기록을 한눈에 확인하세요.",
-    href: "/features/customer-management",
-  },
-  {
-    icon: BookImage,
-    title: "나만의 시크릿 메모장",
-    description:
-      "고객별 시술 노하우와 메모를 나만 볼 수 있게 안전하게 기록하세요.",
-    href: "/features/secret-notes",
-  },
-  {
-    icon: FlaskConical,
-    title: "시술 멀티 타이머",
-    description:
-      "여러 고객의 시술 시간을 동시에 관리하고 알림을 받으세요.",
-    href: "/features/multi-timer",
+      "헤어는 그대로 두고 얼굴만 자연스럽게 변경. 모델 섭외나 초상권 부담 없이 결과 사진을 활용할 수 있어요.",
+    href: "/features/ai-face-anonymization",
   },
   {
     icon: Heart,
     title: "AI 인스타 캡션 작성",
     description:
-      "시술 사진에 딱 맞는 인스타그램 캡션을 AI가 자동으로 작성해 줍니다.",
+      "시술 사진에 어울리는 문장과 해시태그를 AI가 정리해, 업로드 직전 멈춤이 사라져요.",
     href: "/features/ai-instagram-caption",
+  },
+  {
+    icon: FlaskConical,
+    title: "멀티 타이머 · 시크릿 메모",
+    description:
+      "여러 고객의 시술 타이밍을 동시에 관리하고, 나만 보는 노하우 메모도 안전하게 함께 정리해요.",
+    href: "/features/multi-timer",
   },
 ];
 
