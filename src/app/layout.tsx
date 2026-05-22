@@ -12,7 +12,7 @@ export const viewport: Viewport = {
   // 접근성: 사용자 확대 허용 (Lighthouse 권장사항)
   maximumScale: 5,
   viewportFit: "cover",
-  themeColor: "#FFFDFA",
+  themeColor: "#fcfcfc",
 };
 
 export const metadata: Metadata = {
