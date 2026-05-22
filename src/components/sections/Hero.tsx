@@ -60,19 +60,21 @@ export function Hero() {
 
             <motion.h1
               variants={itemVariants}
-              className="text-3xl md:text-5xl lg:text-[56px] font-bold leading-tight mt-5 md:mt-6 mb-4 md:mb-6"
+              className="text-3xl md:text-5xl lg:text-[52px] font-bold leading-tight mt-5 md:mt-6 mb-4 md:mb-6"
             >
-              당신의 헤어 디자인,
-              <br />
-              <span className="text-coral">헤어그래피</span>로 완성하세요
+              좋은 시술이 한 번으로 끝나지 않게.
+              <br className="hidden md:block" />
+              {" "}시술 사진, 레시피, 고객 히스토리를
+              <br className="hidden md:block" />
+              {" "}디자이너의 <span className="text-coral">포트폴리오 자산</span>으로 남기세요.
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="text-base md:text-lg text-text-secondary leading-relaxed mb-6 md:mb-8 max-w-lg"
+              className="text-base md:text-lg text-text-secondary leading-relaxed mb-6 md:mb-8 max-w-xl"
             >
-              AI 얼굴 비식별화부터 AI 인스타 작성 도우미, 포트폴리오, 고객 히스토리 관리까지.
-              {" "}헤어 디자이너의 모든 것을 하나의 앱에서.
+              Hairgraphy는 헤어 디자이너가 매일의 시술을 기록하고, 다시 찾고,
+              {" "}상담과 인스타 업로드에 바로 활용할 수 있게 돕는 개인 기록 앱입니다.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3">
