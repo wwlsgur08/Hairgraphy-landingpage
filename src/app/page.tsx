@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
-import { ProblemAwareness } from "@/components/sections/ProblemAwareness";
+// TODO: 사용자 요청으로 임시 비활성. 향후 디자인 개선 후 복원 예정.
+// import { ProblemAwareness } from "@/components/sections/ProblemAwareness";
 import { ProblemSolutionScroll } from "@/components/sections/ProblemSolutionScroll";
 import { Features } from "@/components/sections/Features";
 import { AIFaceSwapCTA } from "@/components/sections/AIFaceSwapCTA";
@@ -58,7 +59,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <ProblemAwareness />
+        {/* TODO: 사용자 요청으로 임시 비활성. 향후 디자인 개선 후 복원 예정. */}
+        {/* <ProblemAwareness /> */}
         <ProblemSolutionScroll />
         <Features />
         <AIFaceSwapCTA />

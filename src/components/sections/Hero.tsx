@@ -40,13 +40,11 @@ export function Hero() {
 
             <motion.h1
               variants={itemVariants}
-              className="text-3xl md:text-5xl lg:text-[52px] font-bold leading-tight mt-5 md:mt-6 mb-4 md:mb-6"
+              className="text-2xl md:text-4xl lg:text-[44px] font-bold leading-tight mt-5 md:mt-6 mb-4 md:mb-6"
             >
               좋은 시술이 한 번으로 끝나지 않게.
               <br className="hidden md:block" />
-              {" "}시술 사진, 레시피, 고객 히스토리를
-              <br className="hidden md:block" />
-              {" "}디자이너의 <span className="text-coral">포트폴리오 자산</span>으로 남기세요.
+              {" "}매일의 시술을 나의 <span className="text-coral">포트폴리오 자산</span>으로.
             </motion.h1>
 
             <motion.p
