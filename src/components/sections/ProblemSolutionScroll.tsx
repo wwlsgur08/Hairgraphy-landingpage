@@ -1,11 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import {
   motion,
-  useScroll,
-  useMotionValueEvent,
   useReducedMotion,
   useInView,
   AnimatePresence,
@@ -123,20 +121,37 @@ const STEPS: Step[] = [
   },
 ];
 
+const STEP_INTERVAL_MS = 3000;
+
 export function ProblemSolutionScroll() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const [activeStep, setActiveStep] = useState(0);
+  const [isInView, setIsInView] = useState(false);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
+  // 데스크탑 섹션이 화면에 충분히 보일 때만 자동 순환 (off-screen 에서 불필요한 갱신 방지)
+  useEffect(() => {
+    if (reduce) return;
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsInView(!!entry?.isIntersecting);
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [reduce]);
 
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    const next = Math.min(STEPS.length - 1, Math.max(0, Math.floor(v * STEPS.length)));
-    setActiveStep((prev) => (prev === next ? prev : next));
-  });
+  useEffect(() => {
+    if (!isInView || reduce) return;
+    const id = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % STEPS.length);
+    }, STEP_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [isInView, reduce]);
 
   // reduced-motion: 모든 step을 정적 row stack으로
   if (reduce) {
@@ -180,14 +195,13 @@ export function ProblemSolutionScroll() {
 
   return (
     <>
-      {/* Desktop: sticky scroll */}
+      {/* Desktop: 시간 기반 자동 순환 (스크롤락 없음) */}
       <section
         ref={sectionRef}
         className="hidden lg:block relative bg-surface"
-        style={{ height: "320vh" }}
-        aria-label="문제에서 해결로 이어지는 스크롤 내러티브"
+        aria-label="문제에서 해결로 이어지는 단계별 설명"
       >
-        <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+        <div className="h-screen flex items-center overflow-hidden">
           <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-2 gap-12 items-center">
             {/* 좌측 카피 */}
             <div className="relative h-[320px]">
