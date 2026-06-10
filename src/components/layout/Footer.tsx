@@ -11,12 +11,12 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" aria-label="헤어그래피 홈">
               <Image
-                src="/images/logo.png"
+                src="/images/newlogo.png"
                 alt="Hairgraphy"
-                width={140}
-                height={36}
+                width={168}
+                height={40}
                 className="h-8 w-auto mb-4"
-                sizes="140px"
+                sizes="168px"
               />
             </Link>
             <p className="text-text-secondary text-sm leading-relaxed">

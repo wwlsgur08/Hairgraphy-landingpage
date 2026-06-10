@@ -71,13 +71,13 @@ export function Navbar() {
           aria-label="헤어그래피 홈"
         >
           <Image
-            src="/images/logo.png"
+            src="/images/newlogo.png"
             alt="Hairgraphy"
-            width={140}
+            width={151}
             height={36}
             className="h-7 md:h-9 w-auto"
             priority
-            sizes="(max-width: 768px) 120px, 140px"
+            sizes="(max-width: 768px) 130px, 151px"
           />
         </Link>
 

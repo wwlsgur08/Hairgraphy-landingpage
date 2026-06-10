@@ -8,8 +8,17 @@ import {
   useInView,
   AnimatePresence,
 } from "motion/react";
-import { Camera, FileText, Users } from "lucide-react";
+import Image from "next/image";
+import { FileText, Users } from "lucide-react";
 import { RecordCardMotion } from "@/components/sections/hero/RecordCardMotion";
+
+// 디자이너 갤러리에 쌓이는 실제 시술 결과 사진 (세로 3:4)
+const GALLERY_PHOTOS = [
+  "/images/KakaoTalk_20260607_150516543_01.jpg",
+  "/images/KakaoTalk_20260607_150516543_02.jpg",
+  "/images/KakaoTalk_20260607_150516543_03.jpg",
+  "/images/KakaoTalk_20260607_150516543.png",
+];
 
 type Step = {
   copy: string;
@@ -31,12 +40,13 @@ function PhotoPileVisual() {
           className="absolute w-[140px] h-[180px] rounded-xl border border-border bg-card overflow-hidden shadow-sm"
           style={{ left: t.left, top: t.top, transform: `rotate(${t.rot}deg)` }}
         >
-          <div className="w-full h-full bg-gradient-to-br from-text-tertiary/15 to-text-tertiary/5 flex items-center justify-center">
-            <Camera
-              className="w-6 h-6 text-text-tertiary/40"
-              aria-hidden="true"
-            />
-          </div>
+          <Image
+            src={GALLERY_PHOTOS[i]}
+            alt=""
+            fill
+            sizes="140px"
+            className="object-cover"
+          />
         </div>
       ))}
     </div>

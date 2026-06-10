@@ -36,11 +36,11 @@ export default function AndroidPage() {
           {/* Logo */}
           <Link href="/" className="inline-block mb-8">
             <Image
-              src="/images/logo.png"
+              src="/images/newlogo.png"
               alt="헤어그래피"
-              width={48}
-              height={48}
-              className="mx-auto"
+              width={184}
+              height={44}
+              className="mx-auto h-11 w-auto"
             />
           </Link>
 

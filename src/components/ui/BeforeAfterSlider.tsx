@@ -1,34 +1,34 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import { Camera, ScanFace } from "lucide-react";
+import Image from "next/image";
 
 interface BeforeAfterSliderProps {
   className?: string;
 }
 
-/**
- * TODO: 실제 데모 이미지로 교체 — public/images/before-after-original.jpg,
- * public/images/before-after-anon.jpg 가 추가되면 BeforePanel/AfterPanel을
- * <Image src=... fill /> 로 바꿔주세요. 현재는 톤 placeholder 사용.
- */
-
 function BeforePanel() {
   return (
-    <div className="w-full h-full bg-gradient-to-br from-text-tertiary/20 via-text-tertiary/10 to-text-tertiary/5 flex items-center justify-center">
-      <Camera
-        className="w-12 h-12 text-text-tertiary/40"
-        aria-hidden="true"
-      />
-    </div>
+    <Image
+      src="/images/before.png"
+      alt="AI 얼굴 변경 전 — 원본 시술 사진"
+      fill
+      sizes="(max-width: 768px) 80vw, 300px"
+      className="object-cover"
+      priority
+    />
   );
 }
 
 function AfterPanel() {
   return (
-    <div className="w-full h-full bg-gradient-to-br from-coral/15 via-coral/8 to-coral/5 flex items-center justify-center">
-      <ScanFace className="w-12 h-12 text-coral/50" aria-hidden="true" />
-    </div>
+    <Image
+      src="/images/after.png"
+      alt="AI 얼굴 변경 후 — 얼굴만 자연스럽게 변경"
+      fill
+      sizes="(max-width: 768px) 80vw, 300px"
+      className="object-cover"
+    />
   );
 }
 
@@ -50,7 +50,7 @@ export function BeforeAfterSlider({ className }: BeforeAfterSliderProps) {
     <div
       ref={containerRef}
       className={[
-        "relative w-full max-w-md aspect-[4/3] rounded-xl overflow-hidden border border-border-light bg-card select-none touch-none cursor-ew-resize",
+        "relative w-full max-w-[300px] aspect-[1569/3394] rounded-[2rem] overflow-hidden border border-border-light bg-card select-none touch-none cursor-ew-resize",
         className ?? "",
       ].join(" ")}
       role="slider"
@@ -98,7 +98,7 @@ export function BeforeAfterSlider({ className }: BeforeAfterSliderProps) {
       {/* Before (원본) — 전체에 깔림 */}
       <div className="absolute inset-0">
         <BeforePanel />
-        <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-text-primary/80 text-white text-xs font-semibold">
+        <span className="absolute top-[14%] left-3 px-2.5 py-1 rounded-md bg-text-primary/80 text-white text-xs font-semibold z-10">
           원본
         </span>
       </div>
@@ -109,7 +109,7 @@ export function BeforeAfterSlider({ className }: BeforeAfterSliderProps) {
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
       >
         <AfterPanel />
-        <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-coral text-white text-xs font-semibold">
+        <span className="absolute top-[14%] left-3 px-2.5 py-1 rounded-md bg-coral text-white text-xs font-semibold z-10">
           AI 얼굴 변경
         </span>
       </div>

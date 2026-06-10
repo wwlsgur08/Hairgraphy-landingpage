@@ -1,8 +1,9 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
-import { Camera, Calendar, Beaker, User, FileText } from "lucide-react";
+import { Calendar, Beaker, User, FileText } from "lucide-react";
 
 interface PieceDef {
   key: string;
@@ -30,10 +31,14 @@ const PIECES: PieceDef[] = [
     zIndex: 1,
     delay: 0,
     render: () => (
-      <div className="w-[220px] h-[130px] rounded-xl border border-border bg-card overflow-hidden shadow-sm">
-        <div className="w-full h-full bg-gradient-to-br from-text-tertiary/15 to-text-tertiary/5 flex items-center justify-center">
-          <Camera className="w-7 h-7 text-text-tertiary/40" aria-hidden="true" />
-        </div>
+      <div className="relative w-[220px] h-[130px] rounded-xl border border-border bg-card overflow-hidden shadow-sm">
+        <Image
+          src="/images/KakaoTalk_20260607_150516543.png"
+          alt=""
+          fill
+          sizes="220px"
+          className="object-cover"
+        />
       </div>
     ),
   },
